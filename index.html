@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Narasimha Cittarusu Website</title>
+    <style>
+        body {
+            font-family: 'Courier New', Courier, monospace;
+            margin: 0;
+            padding: 0;
+            background-color: #000;
+            color: #fff;
+            scroll-behavior: smooth;
+        }
+
+        header {
+            background-color: #000;
+            color: #fff;
+            padding: 10px;
+            text-align: center;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        nav ul li {
+            display: inline;
+            margin-right: 20px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: #fff;
+            position: relative;
+            display: inline-block;
+            transition: color 0.3s;
+        }
+
+        nav ul li a:after,
+        .profile-links a:after {
+            content: '';
+            display: block;
+            width: 0;
+            height: 2px;
+            background: #fff;
+            transition: width 0.3s ease;
+        }
+
+        nav ul li a:hover,
+        .profile-links a:hover {
+            color: #555;
+        }
+
+        nav ul li a:hover:after,
+        .profile-links a:hover:after {
+            width: 100%;
+        }
+
+        .content {
+            font-family: 'Courier New', Courier, monospace;
+            max-width: 800px;
+            margin: 70px auto 20px;
+            padding: 20px;
+            background-color: #000;
+            color: #fff;
+        }
+
+        .profile-section {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 20px;
+        }
+
+        .profile-picture img {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            border: 3px solid #fff;
+        }
+
+        .profile-links {
+            display: flex;
+            flex-direction: column;
+            margin-top: 10px;
+        }
+
+        .profile-links a {
+            text-decoration: none;
+            color: #fff;
+            position: relative;
+            display: block;
+            margin-top: 10px;
+            transition: color 0.3s;
+        }
+
+        .profile-links a:hover {
+            color: #555;
+        }
+
+        .about-section {
+            flex-grow: 1;
+            padding-left: 20px;
+            margin-top: 20px;
+        }
+
+        footer {
+            background-color: #000;
+            color: #fff;
+            text-align: center;
+            padding: 10px;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+
+      
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>Narasimha Cittarusu</h1>
+        <nav>
+            <ul>
+                <li><a href="#about">About Me</a></li>
+                <li><a href="projects.html">Projects</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="content" id="about">
+        <div class="profile-section">
+            <div class="profile-picture">
+                <!-- Add your profile picture here -->
+            </div>
+            <div class="profile-links">
+                <div class="profile-section">
+                    <div class="profile-picture">
+                        <img src="linkedinpfp.png" alt="Your Name's Profile Picture">
+                    </div>
+                    <div class="profile-links">
+                        <a href="https://github.com/yourusername" target="_blank">
+                            <img src="githublogo.png" alt="GitHub Icon" width="20" height="20"> GitHub
+                        </a>
+                        <a href="https://linkedin.com/in/narasimha-c-645a86268" target="_blank">
+                            <img src="linkedinlogo.png" alt="LinkedIn Icon" width="20" height="20"> LinkedIn
+                        </a>
+                        <a href="Narasimha_Cittarusu_updated_better_resume.pdf" target="_blank">
+                            <img src="resumelogo.png" alt="Resume Icon" width="20" height="20"> Resume
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+
+        <div class="about-section">
+            <h2>About Me</h2>
+            <p>
+                Welcome to my personal website. I am a Computer Science and Statistics/Applied Mathematics major with a passion for quantitative trading. I enjoy exploring the realms of Machine Learning, Artificial
+                Intelligence, and Software Engineering. My interests extend to options and derivative pricing.
+            </p>
+            <p>
+                In addition to my academic pursuits, I actively engage in math exploration, seeking to understand more
+                to the ever-evolving field. I am currently working on a project under the mentorship of Kexuan Yang(a
+                UNC graduate student) on quadratic reciprocity, p-adic numbers, classification of quadratic forms, and
+                modular forms.
+            </p>
+        </div>
+    </div>
+
+    <footer>
+        &copy; 2024 Narasimha Cittarusu. All rights reserved.
+    </footer>
+
+    
+</body>
+
+</html>

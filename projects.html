@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects</title>
+    <!-- Include the same style as in index.html -->
+    <style>
+        body {
+            font-family: 'Courier New', Courier, monospace;
+            margin: 0;
+            padding: 0;
+            background-color: #000; /* Black background color */
+            color: #fff; /* White text color */
+            scroll-behavior: smooth; /* Enable smooth scrolling for the whole page */
+        }
+
+        header {
+            background-color: #000; /* Black header background color */
+            color: #fff; /* White text color */
+            padding: 10px;
+            text-align: center;
+            position: fixed;
+            width: 100%;
+            top: 0; /* Fixed at the top */
+            z-index: 1000;
+        }
+
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        nav ul li {
+            display: inline;
+            margin-right: 20px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: #fff; /* White link color */
+            position: relative;
+            display: inline-block;
+            transition: color 0.3s;
+        }
+
+        nav ul li a:after {
+            content: '';
+            display: block;
+            width: 0;
+            height: 2px;
+            background: #fff; /* White underline color */
+            transition: width 0.3s ease;
+        }
+
+        nav ul li a:hover:after {
+            width: 100%;
+        }
+
+        .content {
+            font-family: 'Courier New', Courier, monospace;
+            max-width: 800px;
+            margin: 110px auto 20px; /* Adjusted margin for content below fixed header */
+            padding: 20px;
+            background-color: #000; /* Black content background color */
+            color: #fff; /* White text color */
+        }
+
+        .introduction {
+            margin-bottom: 20px; /* Add margin at the bottom of the introduction text */
+        }
+
+        .projects-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between; /* Distribute projects evenly */
+        }
+
+        .project-section {
+            width: 30%; /* Set width for each project container */
+            margin-bottom: 30px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .project-thumbnail {
+            max-width: 100%;
+            height: auto;
+            cursor: pointer;
+        }
+
+        .project-description {
+            margin-top: 10px;
+            text-align: center;
+            display: none; /* Initially hide the project description */
+        }
+
+        .description-button {
+            background-color: #000;
+            color: #fff;
+            padding: 8px 16px;
+            border: 2px solid #fff;
+            cursor: pointer;
+            transition: background-color 0.3s, color 0.3s;
+            margin-top: 10px;
+        }
+
+        .description-button:hover {
+            background-color: #fff;
+            color: #000;
+        }
+
+        footer {
+            background-color: #000; 
+            color: #fff; 
+            text-align: center;
+            padding: 10px;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+
+        .project-name {
+            font-size: 1.2em; /* Increase font size for project name */
+            font-weight: bold;
+            margin-top: 10px;
+        }
+
+        .project-description-text {
+            margin-top: 10px;
+            text-align: left; /* Center to the left */
+            display: none; /* Initially hide the project description */
+        }
+        
+        .toggle-description-button {
+            background-color: #000;
+            color: #fff;
+            padding: 8px 16px;
+            cursor: pointer;
+            transition: background-color 0.3s, color 0.3s;
+            margin-top: 10px;
+            border: 2px solid #fff; /* Add border */
+        }
+
+        .toggle-description-button:hover {
+            background-color: #fff;
+            color: #000;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>Narasimha Cittarusu</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html#about">About Me</a></li>
+                <li><a href="projects.html">Projects</a></li>
+                <li><a href="experience.html">Experience</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="content">
+        <div class="introduction">
+            <p>These are all the projects that I am currently working on.</p>
+        </div>
+        <div class="projects-container">
+            <div class="project-section">
+                <a href="https://devpost.com/software/nostalgia-through-video-games">
+                    <img src="coolvidgame.jpg" alt="Project 1" class="project-thumbnail">
+                </a>
+                <p class="project-name">Nostalgia through video games.</p>
+                <p class="project-description-text" id="project1-description">
+                    This project aims to evoke nostalgia through video games. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla nec libero et odio tincidunt volutpat. Suspendisse potenti.
+                </p>
+                <button class="toggle-description-button" onclick="toggleDescription('project1-description')">Open Description</button>
+            </div>
+            <!-- ... (other project sections if applicable) ... -->
+        </div>
+    </div>
+
+
+    <footer>
+        &copy; 2024 Narasimha Cittarusu. All rights reserved.
+    </footer>
+
+    <script>
+        function toggleDescription(projectId) {
+            const description = document.getElementById(projectId);
+            const button = document.querySelector('.toggle-description-button');
+
+            description.style.display = (description.style.display === 'none' || description.style.display === '') ? 'block' : 'none';
+            button.innerText = (description.style.display === 'none' || description.style.display === '') ? 'Open Description' : 'Close Description';
+        }
+    </script>
+</body>
+
+</html>
