@@ -10,14 +10,17 @@
             font-family: 'Courier New', Courier, monospace;
             margin: 0;
             padding: 0;
-            background-color: #000;
-            color: #fff;
+            background-color: #000; /* Default dark mode background color */
+            color: #fff; /* Default dark mode text color */
             scroll-behavior: smooth;
         }
 
-        header {
+        header, footer {
             background-color: #000;
             color: #fff;
+        }
+
+        header {
             padding: 10px;
             text-align: center;
             position: fixed;
@@ -39,7 +42,7 @@
 
         nav ul li a {
             text-decoration: none;
-            color: #fff;
+            color: #fff; /* Default dark mode text color */
             position: relative;
             display: inline-block;
             transition: color 0.3s;
@@ -70,8 +73,13 @@
             max-width: 800px;
             margin: 70px auto 20px;
             padding: 20px;
-            background-color: #000;
-            color: #fff;
+            background-color: #000; /* Default dark mode background color */
+            color: #fff; /* Default dark mode text color */
+        }
+
+        .light-mode .content {
+            background-color: #fff; /* Light mode background color */
+            color: #000; /* Light mode text color */
         }
 
         .profile-section {
@@ -96,7 +104,6 @@
 
         .profile-links a {
             text-decoration: none;
-            color: #fff;
             position: relative;
             display: block;
             margin-top: 10px;
@@ -107,23 +114,46 @@
             color: #555;
         }
 
-        .about-section {
-            flex-grow: 1;
-            padding-left: 20px;
-            margin-top: 20px;
-        }
-
         footer {
-            background-color: #000;
-            color: #fff;
             text-align: center;
             padding: 10px;
             position: fixed;
             bottom: 0;
             width: 100%;
+            background-color: #000;
+            color: #fff;
         }
 
-      
+        /* Light mode styles */
+        .light-mode {
+            background-color: #fff; /* Light mode background color */
+            color: #000; /* Light mode text color */
+        }
+
+        .light-mode header, .light-mode footer {
+            background-color: #fff;
+            color: #000;
+        }
+
+        /* Toggle button styles */
+        .mode-toggle {
+            position: absolute;
+            top: 50%;
+            left: 20px; /* Adjust as needed */
+            transform: translateY(-50%);
+            background-color: #fff;
+            color: #000;
+            border: 2px solid #fff; /* White outline */
+            padding: 5px;
+            border-radius: 20px;
+            cursor: pointer;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        .light-mode .mode-toggle {
+            background-color: #000;
+            color: #fff;
+        }
     </style>
 </head>
 
@@ -132,49 +162,40 @@
         <h1>Narasimha Cittarusu</h1>
         <nav>
             <ul>
-                <li><a href="#about">About Me</a></li>
-                <li><a href="projects.html">Projects</a></li>
+                <li><a href="#about" class="nav-link">About Me</a></li>
+                <li><a href="projects.html" class="nav-link">Projects</a></li>
             </ul>
         </nav>
+        <button class="mode-toggle" id="mode-toggle">Toggle Light Mode</button>
     </header>
 
     <div class="content" id="about">
         <div class="profile-section">
             <div class="profile-picture">
-                <!-- Add your profile picture here -->
+                <img src="linkedinpfp.png" alt="Your Name's Profile Picture">
             </div>
             <div class="profile-links">
-                <div class="profile-section">
-                    <div class="profile-picture">
-                        <img src="linkedinpfp.png" alt="Your Name's Profile Picture">
-                    </div>
-                    <div class="profile-links">
-                        <a href="https://github.com/narasimhacittarusucsstats" target="_blank">
-                            <img src="githublogo.png" alt="GitHub Icon" width="20" height="20"> GitHub
-                        </a>
-                        <a href="https://linkedin.com/in/narasimha-c-645a86268" target="_blank">
-                            <img src="linkedinlogo.png" alt="LinkedIn Icon" width="20" height="20"> LinkedIn
-                        </a>
-                        <a href="Narasimha_Cittarusu_updated_better_resume.pdf" target="_blank">
-                            <img src="resumelogo.png" alt="Resume Icon" width="20" height="20"> Resume
-                        </a>
-                    </div>
-                </div>
+                <a href="https://github.com/narasimhacittarusucsstats" target="_blank">
+                    <img src="githublogo.png" alt="GitHub Icon" width="20" height="20"> GitHub
+                </a>
+                <a href="https://linkedin.com/in/narasimha-c-645a86268" target="_blank">
+                    <img src="linkedinlogo.png" alt="LinkedIn Icon" width="20" height="20"> LinkedIn
+                </a>
+                <a href="Narasimha_Cittarusu_updated_better_resume.pdf" target="_blank">
+                    <img src="resumelogo.png" alt="Resume Icon" width="20" height="20"> Resume
+                </a>
             </div>
         </div>
-        
 
         <div class="about-section">
             <h2>About Me</h2>
             <p>
-                Welcome to my personal website. I am a Computer Science and Statistics/Applied Mathematics major with a passion for quantitative trading. I enjoy exploring the realms of Machine Learning, Artificial
-                Intelligence, and Software Engineering. My interests extend to options and derivative pricing.
+                Welcome to my personal website. I am currently majoring in Computer Science and minoring in Statistics. I have a passion in learning about algorithms. I seek to extend my knowledge of computer science and algorithms to the finance industry, specfically in high-frequency trading and algorithmic trading. More specificially, I am interested in algorithm development and low latency programming. My favorite programming language is C++.
             </p>
             <p>
                 In addition to my academic pursuits, I actively engage in math exploration, seeking to understand more
                 to the ever-evolving field. I am currently working on a project under the mentorship of Kexuan Yang(a
-                UNC graduate student) on quadratic reciprocity, p-adic numbers, classification of quadratic forms, and
-                modular forms.
+                UNC graduate student) and plan to do a project on Lagrange's Four Square Theorem.
             </p>
         </div>
     </div>
@@ -183,7 +204,21 @@
         &copy; 2024 Narasimha Cittarusu. All rights reserved.
     </footer>
 
-    
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const modeToggleBtn = document.getElementById('mode-toggle');
+            const body = document.body;
+
+            modeToggleBtn.addEventListener('click', () => {
+                body.classList.toggle('light-mode');
+                if (body.classList.contains('light-mode')) {
+                    modeToggleBtn.textContent = 'Toggle Dark Mode';
+                } else {
+                    modeToggleBtn.textContent = 'Toggle Light Mode';
+                }
+            });
+        });
+    </script>
 </body>
 
 </html>
