@@ -10,8 +10,8 @@
             font-family: 'Courier New', Courier, monospace;
             margin: 0;
             padding: 0;
-            background-color: #000; /* Default dark mode background color */
-            color: #fff; /* Default dark mode text color */
+            background-color: #000; 
+            color: #fff; 
             scroll-behavior: smooth;
         }
 
@@ -42,7 +42,7 @@
 
         nav ul li a {
             text-decoration: none;
-            color: #fff; /* Default dark mode text color */
+            color: #fff; 
             position: relative;
             display: inline-block;
             transition: color 0.3s;
@@ -73,13 +73,13 @@
             max-width: 800px;
             margin: 70px auto 20px;
             padding: 20px;
-            background-color: #000; /* Default dark mode background color */
-            color: #fff; /* Default dark mode text color */
+            background-color: #000; 
+            color: #fff; 
         }
 
         .light-mode .content {
-            background-color: #fff; /* Light mode background color */
-            color: #000; /* Light mode text color */
+            background-color: #fff; 
+            color: #000; 
         }
 
         .profile-section {
@@ -124,10 +124,9 @@
             color: #fff;
         }
 
-        /* Light mode styles */
         .light-mode {
-            background-color: #fff; /* Light mode background color */
-            color: #000; /* Light mode text color */
+            background-color: #fff;
+            color: #000; 
         }
 
         .light-mode header, .light-mode footer {
@@ -135,7 +134,7 @@
             color: #000;
         }
 
-        /* Toggle button styles */
+        
         .mode-toggle {
             position: absolute;
             top: 50%;
@@ -143,7 +142,7 @@
             transform: translateY(-50%);
             background-color: #fff;
             color: #000;
-            border: 2px solid #fff; /* White outline */
+            border: 2px solid #fff; 
             padding: 5px;
             border-radius: 20px;
             cursor: pointer;
@@ -154,6 +153,17 @@
             background-color: #000;
             color: #fff;
         }
+
+        .light-mode nav ul li a {
+            color: #000; 
+        }
+
+        .light-mode .profile-links a {
+            color: #000; 
+        }
+
+        
+        
     </style>
 </head>
 
@@ -203,22 +213,7 @@
     <footer>
         &copy; 2024 Narasimha Cittarusu. All rights reserved.
     </footer>
-
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const modeToggleBtn = document.getElementById('mode-toggle');
-            const body = document.body;
-
-            modeToggleBtn.addEventListener('click', () => {
-                body.classList.toggle('light-mode');
-                if (body.classList.contains('light-mode')) {
-                    modeToggleBtn.textContent = 'Toggle Dark Mode';
-                } else {
-                    modeToggleBtn.textContent = 'Toggle Light Mode';
-                }
-            });
-        });
-    </script>
+    <script src="darkmodetoggle.js"></script>
 </body>
 
 </html>
