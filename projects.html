@@ -151,6 +151,45 @@
             background-color: #fff;
             color: #000;
         }
+
+        .light-mode {
+            background-color: #fff;
+            color: #000; 
+        }
+
+        .light-mode header, .light-mode footer {
+            background-color: #fff;
+            color: #000;
+        }
+
+        
+        .mode-toggle {
+            position: absolute;
+            top: 50%;
+            left: 20px; 
+            transform: translateY(-50%);
+            background-color: #fff;
+            color: #000;
+            border: 2px solid #fff; 
+            padding: 5px;
+            border-radius: 20px;
+            cursor: pointer;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        .light-mode .mode-toggle {
+            background-color: #000;
+            color: #fff;
+        }
+
+        .light-mode nav ul li a {
+            color: #000; 
+        }
+
+        .light-mode .profile-links a {
+            color: #000; 
+        }
+
     </style>
 </head>
 
@@ -163,6 +202,7 @@
                 <li><a href="projects.html">Projects</a></li>
             </ul>
         </nav>
+        <button class="mode-toggle" id="mode-toggle">Toggle Light Mode</button>
     </header>
 
     <div class="content">
@@ -214,14 +254,53 @@
     </footer>
 
     <script>
+        function toggleMode() {
+            const body = document.body;
+            const header = document.querySelector('header');
+            const footer = document.querySelector('footer');
+            const navLinks = document.querySelectorAll('nav ul li a');
+            const profileLinks = document.querySelectorAll('.profile-links a');
+            const modeToggle = document.getElementById('mode-toggle');
+            const content = document.querySelector('.content');
+            const introduction = document.querySelector('.introduction');
+            const projectSections = document.querySelectorAll('.project-section');
+    
+            body.classList.toggle('light-mode');
+            header.classList.toggle('light-mode');
+            footer.classList.toggle('light-mode');
+    
+            navLinks.forEach(link => {
+                link.classList.toggle('light-mode');
+            });
+    
+            profileLinks.forEach(link => {
+                link.classList.toggle('light-mode');
+            });
+    
+            modeToggle.classList.toggle('light-mode');
+            modeToggle.innerText = (body.classList.contains('light-mode')) ? 'Toggle Dark Mode' : 'Toggle Light Mode';
+    
+            content.classList.toggle('light-mode');
+            introduction.classList.toggle('light-mode');
+    
+            projectSections.forEach(section => {
+                section.classList.toggle('light-mode');
+            });
+        }
+    
+        const modeToggle = document.getElementById('mode-toggle');
+        modeToggle.addEventListener('click', toggleMode);
+    
         function toggleDescription(projectId) {
             const description = document.getElementById(projectId);
-            const button = description.nextElementSibling; 
+            const button = description.nextElementSibling;
     
             description.style.display = (description.style.display === 'none' || description.style.display === '') ? 'block' : 'none';
             button.innerText = (description.style.display === 'none' || description.style.display === '') ? 'Open Description' : 'Close Description';
         }
     </script>
+    
+    
 </body>
 
 </html>
