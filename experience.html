@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Narasimha Cittarusu Website</title>
+    <style>
+        body {
+            font-family: 'Courier New', Courier, monospace;
+            margin: 0;
+            padding: 0;
+            background-color: #000; 
+            color: #fff; 
+            scroll-behavior: smooth;
+        }
+
+        header, footer {
+            background-color: #000;
+            color: #fff;
+        }
+
+        header {
+            padding: 10px;
+            text-align: center;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        nav ul li {
+            display: inline;
+            margin-right: 20px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: #fff; 
+            position: relative;
+            display: inline-block;
+            transition: color 0.3s;
+        }
+
+        nav ul li a:after,
+        .profile-links a:after {
+            content: '';
+            display: block;
+            width: 0;
+            height: 2px;
+            background: #fff;
+            transition: width 0.3s ease;
+        }
+
+        nav ul li a:hover,
+        .profile-links a:hover {
+            color: #555;
+        }
+
+        nav ul li a:hover:after,
+        .profile-links a:hover:after {
+            width: 100%;
+        }
+
+        .content {
+            font-family: 'Courier New', Courier, monospace;
+            max-width: 800px;
+            margin: 70px auto 20px;
+            padding: 20px;
+            background-color: #000; 
+            color: #fff; 
+        }
+
+        .light-mode .content {
+            background-color: #fff; 
+            color: #000; 
+        }
+
+        .profile-section {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 20px;
+        }
+
+        .profile-picture img {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            border: 3px solid #fff;
+        }
+
+        .profile-links {
+            display: flex;
+            flex-direction: column;
+            margin-top: 10px;
+        }
+
+        .profile-links a {
+            text-decoration: none;
+            position: relative;
+            display: block;
+            margin-top: 10px;
+            transition: color 0.3s;
+        }
+
+        .profile-links a:hover {
+            color: #555;
+        }
+
+        footer {
+            text-align: center;
+            padding: 10px;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            background-color: #000;
+            color: #fff;
+        }
+
+        .light-mode {
+            background-color: #fff;
+            color: #000; 
+        }
+
+        .light-mode header, .light-mode footer {
+            background-color: #fff;
+            color: #000;
+        }
+
+        
+        .mode-toggle {
+            position: absolute;
+            top: 50%;
+            left: 20px; 
+            transform: translateY(-50%);
+            background-color: #fff;
+            color: #000;
+            border: 2px solid #fff; 
+            padding: 5px;
+            border-radius: 20px;
+            cursor: pointer;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        .light-mode .mode-toggle {
+            background-color: #000;
+            color: #fff;
+        }
+
+        .light-mode nav ul li a {
+            color: #000; 
+        }
+
+        .light-mode .profile-links a {
+            color: #000; 
+        }    
+
+        .fade-in {
+            animation: fadeInAnimation 2s ease forwards;
+            opacity: 0;
+        }
+
+        @keyframes fadeInAnimation {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>Narasimha Cittarusu</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html" class="nav-link">About Me</a></li>
+                <li><a href="projects.html" class="nav-link">Projects</a></li>
+                <li><a href="experience.html" class="nav-link">Experience</a></li>
+            </ul>
+        </nav>
+        <button class="mode-toggle" id="mode-toggle">Toggle Light Mode</button>
+    </header>
+
+    <div class="content">
+      <section id="experience">
+          <h2>Experience</h2>
+          <ul class="experience-list">
+              <li class="experience-item fade-in">
+                  <h3>Appstractify</h3>
+                  <p class="role">Contributor</p>
+                  <p class="dates">Mar. 2024 -- Present</p>
+                  <p class="description">Currently making the data filtering software more efficient and accurate within this company.</p>
+              </li>
+
+              <li class="experience-item fade-in">
+                <h3>Discovery Place Science</h3>
+                <p class="role">STEM Apprentice</p>
+                <p class="dates">Aug. 2019 -- Mar 2020</p>
+                <p class="description">Worked in the Thinker Space Department in the Discovery Place Science Center; used AutoCAD and Tinker cad as
+                  the primary software; proficiency with 3-d printing and 3d modeling software. Assisted people who were visiting
+                  Discovery Place with 3d printers</p>
+              </li>
+
+              <li class="experience-item fade-in">
+                <h3>UNC CS + Social Good</h3>
+                <p class="role">Education Team Member</p>
+                <p class="dates">Sept. 2023 -- Dec 2023</p>
+                <p class="description">Learned about HTML, CSS, Javascript, Node.js, and React.js to assist the project team; made simple
+                  website using Javascript to showacase my understanding. Collaborated with fellow team members in the team
+                  to make tangible online websites.</p>
+              </li>
+
+              <li class="experience-item fade-in">
+                <h3>UNC Department of Computer Science</h3>
+                <p class="role">Undergraduate Teaching Assistant - COMP 110</p>
+                <p class="dates">Jan. 2024 -- Present</p>
+                <p class="description">Currently assisting people in Introduction to Programming and Data Science with any question they have and
+                  grading assignments as well.</p>
+              </li>
+
+              <li class="experience-item fade-in">
+                <h3>UNC Department of Computer Science</h3>
+                <p class="role">Undergraduate Student Researcher</p>
+                <p class="dates">Jan. 2024 -- Present</p>
+                <p class="description">Working with Dr. Henry Fuchs on AI powered book translation using character recognition.
+                </p>
+              </li>
+
+              <li class="experience-item fade-in">
+                <h3>UNC Mathematics Department</h3>
+                <p class="role">Directed Reading Program</p>
+                <p class="dates">Jan. 2024 -- Present</p>
+                <p class="description">Working with a graduate student on learning about abstract algebra topics. Final presentation will be on Lagrange's Four Square theorem.</p>
+              </li>     
+          </ul>
+      </section>
+  </div>
+
+    <footer>
+        &copy; 2024 Narasimha Cittarusu. All rights reserved.
+    </footer>
+    <script src="darkmodetoggle.js"></script>
+</body>
+
+</html>
