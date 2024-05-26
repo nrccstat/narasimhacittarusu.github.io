@@ -7,7 +7,7 @@
     <title>Narasimha Cittarusu Website</title>
     <style>
         body {
-            font-family: 'Courier New', Courier, monospace;
+            font-family: monospace;
             margin: 0;
             padding: 0;
             background-color: #000; 
@@ -69,7 +69,7 @@
         }
 
         .content {
-            font-family: 'Courier New', Courier, monospace;
+            font-family: monospace;
             max-width: 800px;
             margin: 70px auto 20px;
             padding: 20px;
@@ -236,13 +236,7 @@
                 <p class="description">Worked in the Thinker Space Department in the Discovery Place Science Center; used AutoCAD and Tinker cad as
                   the primary software; proficiency with 3-d printing and 3d modeling software. Assisted people who were visiting
                   Discovery Place with 3d printers</p>
-              </li>
-
-              
-
-              
-
-                
+              </li>      
           </ul>
       </section>
   </div>
@@ -250,7 +244,52 @@
     <footer>
         &copy; 2024 Narasimha Cittarusu. All rights reserved.
     </footer>
-    <script src="darkmodetoggle.js"></script>
+    <script>
+        function toggleMode() {
+            const body = document.body;
+            const header = document.querySelector('header');
+            const footer = document.querySelector('footer');
+            const navLinks = document.querySelectorAll('nav ul li a');
+            const profileLinks = document.querySelectorAll('.profile-links a');
+            const modeToggle = document.getElementById('mode-toggle');
+            const content = document.querySelector('.content');
+            const introduction = document.querySelector('.introduction');
+            const projectSections = document.querySelectorAll('.project-section');
+    
+            body.classList.toggle('light-mode');
+            header.classList.toggle('light-mode');
+            footer.classList.toggle('light-mode');
+    
+            navLinks.forEach(link => {
+                link.classList.toggle('light-mode');
+            });
+    
+            profileLinks.forEach(link => {
+                link.classList.toggle('light-mode');
+            });
+    
+            modeToggle.classList.toggle('light-mode');
+            modeToggle.innerText = (body.classList.contains('light-mode')) ? 'Toggle Dark Mode' : 'Toggle Light Mode';
+    
+            content.classList.toggle('light-mode');
+            introduction.classList.toggle('light-mode');
+    
+            projectSections.forEach(section => {
+                section.classList.toggle('light-mode');
+            });
+        }
+    
+        const modeToggle = document.getElementById('mode-toggle');
+        modeToggle.addEventListener('click', toggleMode);
+    
+        function toggleDescription(projectId) {
+            const description = document.getElementById(projectId);
+            const button = description.nextElementSibling;
+    
+            description.style.display = (description.style.display === 'none' || description.style.display === '') ? 'block' : 'none';
+            button.innerText = (description.style.display === 'none' || description.style.display === '') ? 'Open Description' : 'Close Description';
+        }
+    </script>
 </body>
 
 </html>
