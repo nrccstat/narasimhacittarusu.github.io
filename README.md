@@ -118,16 +118,8 @@ Follow web development best practices and include comments.
 This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
 
 ## Contact
-For questions or support, contact [Your Name] at [your.email@example.com] or open an issue on the repository.
+For questions or support, contact Narasimha at [naci@ad.unc.edu] or open an issue on the repository.
 
 ---
 
-### Notes for You
-- **Customization**: Replace `<repository-url>`, `[Your Name]`, and `[your.email@example.com]` with your details.
-- **Enhancement Suggestions**:
-  - Add a `styles.css` file for consistent styling.
-  - Implement a backend (e.g., Node.js) for dynamic content.
-  - Convert `stock.avi` to a web-friendly format (e.g., MP4).
-- **File Clarity**: The `better resume{...}` entry is ambiguous; clarify its format (e.g., text or HTML) if needed.
-- **Deployment**: Test GitHub Pages deployment with `jekyll-gh-pages.yml`.
 
